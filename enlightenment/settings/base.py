@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "widget_tweaks",
     # user defined apps
     "apps.blog.apps.BlogConfig",
     "apps.core.apps.CoreConfig",

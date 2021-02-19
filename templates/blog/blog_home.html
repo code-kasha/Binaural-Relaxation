@@ -17,7 +17,7 @@
                         <div class="card-header-title columns is-inline">
                             <div class="column is-two-third">
                                 <h3 class="title">
-                                    <a href="{% url 'blog:post_details' post.id %}">
+                                    <a href="{% url 'blog:post_details' post.slug %}">
                                         {{post.title}}
                                     </a>
                                 </h3>
@@ -32,11 +32,12 @@
                         <div class="buttons column">
                             <p>
                                 <p class="has-text-centered">
-                                    Created at : {{post.created_at}} |
-                                    Likes : {{post.likes.all.count}}
+                                    Likes : {{post.likes.all.count}} |
+                                    Comments : {{post.comments.all.count}} |
+                                    {{post.created_at|timesince}} ago
                                 </p>
 
-                                <form action="{% url 'blog:toggle_like' post.id %}" method="post">
+                                <form action="{% url 'blog:toggle_like' post.slug %}" method="post">
                                     {% csrf_token %}
                                     {% if user in post.likes.all %}
                                     <button type="submit" class="button is-small is-danger">Unlike</button>

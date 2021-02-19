@@ -2,7 +2,7 @@
 {% url 'account_logout' as logout_url %}
 {% url 'account_signup' as signup_url %}
 
-{% url 'account_reset_password' as password_reset_url %}
+{% url 'account_change_password' as password_reset_url %}
 {% url 'account_email' as account_email_url %}
 
 {% url 'info' as info_url %}
@@ -41,7 +41,7 @@
         </div>
         <div class="navbar-end">
             {% if user.is_authenticated %}
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item is-hoverable">
                 <a class="navbar-link">
                     {{user}}'s Account
                 </a>
@@ -55,6 +55,9 @@
                     </a>
                     <a class="navbar-item">
                         Change Details
+                    </a>
+                    <a class="navbar-item">
+                        Change Avatar
                     </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item" href="{{logout_url}}">

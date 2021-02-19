@@ -9,7 +9,6 @@ class Comment(models.Model):
     user = models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE)
     title = models.CharField(max_length=220)
     slug = models.SlugField(blank=True)
-    likes = models.ManyToManyField(User, related_name="liked_comments", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
