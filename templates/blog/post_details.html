@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="card-content">
-        <p class="hero">{{post.content}}</p>
+        <p class="hero">{{post.content|safe}}</p>
         <hr>
         <h3><strong>Comments [{{post.comments.all.count}}]</strong> &nbsp; &nbsp; <strong>Likes
                 [{{post.likes.all.count}}]</strong>
@@ -34,7 +34,9 @@
     </div>
     {% for comment in post.comments.all %}
     <div class="card-content">
-        <p><strong>{{comment.user}}</strong>, <small>{{comment.created_at | timesince}} ago </small>:->
+
+        <p> <img src="{{comment.user.profile.get_avatar}}" alt="user-img" class="image is-32x32">
+            <strong>{{comment.user}}</strong>, <small>{{comment.created_at | timesince}} ago </small>:->
             {{comment.title}}
         </p>
     </div>

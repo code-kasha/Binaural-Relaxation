@@ -19,6 +19,6 @@ class Profile(models.Model):
 
     def get_avatar(self):
         if not self.avatar:
-            return "static/images/default.jpeg"
+            return "/static/images/default.jpeg"
         else:
             return self.avatar.url

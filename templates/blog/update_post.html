@@ -8,8 +8,9 @@
 <h3 class="title">Update Post:</h3>
 <hr>
 <div class="container">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        {{form.media|safe}}
         <div class="field">
             <div class="control">
                 <label>{{form.title.label}}</label>

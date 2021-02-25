@@ -8,6 +8,7 @@
 <hr>
 <div class="container">
     <form method="post">
+
         {% csrf_token %}
         <div class="field">
             <div class="control">
@@ -17,7 +18,12 @@
             <div class="field">
                 <div class="control">
                     <label>{{form.content.label}}</label>
-                    {{form.content|add_class:"field input textarea"}}
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    {{form.content|add_class:"field input"}}
+                    {{form.media}}
                 </div>
             </div>
         </div>

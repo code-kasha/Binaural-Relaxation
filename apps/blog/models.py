@@ -2,6 +2,8 @@ from django.db import models
 
 from django.contrib.auth import get_user_model
 
+from ckeditor.fields import RichTextField
+
 User = get_user_model()
 
 
@@ -21,7 +23,7 @@ class Post(models.Model):
     comments = models.ManyToManyField(Comment, related_name="posts", blank=True)
     title = models.CharField(max_length=120)
     slug = models.SlugField(blank=True)
-    content = models.TextField()
+    content = RichTextField()
     likes = models.ManyToManyField(User, related_name="liked_posts", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

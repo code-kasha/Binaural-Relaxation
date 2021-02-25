@@ -4,7 +4,7 @@
 
 {% url 'account_change_password' as password_reset_url %}
 {% url 'account_email' as account_email_url %}
-
+{% url 'user-edit' as user_edit_url %}
 {% url 'info' as info_url %}
 
 {% url 'blog:home' as blog_url %}
@@ -53,11 +53,8 @@
                     <a class="navbar-item" href="{{password_reset_url}}">
                         Change Password
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="{{user_edit_url}}">
                         Change Details
-                    </a>
-                    <a class="navbar-item">
-                        Change Avatar
                     </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item" href="{{logout_url}}">

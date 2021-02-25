@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "widget_tweaks",
+    "ckeditor",
+    "ckeditor_uploader",
     # user defined apps
     "apps.blog.apps.BlogConfig",
     "apps.core.apps.CoreConfig",
@@ -37,6 +39,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads"
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`

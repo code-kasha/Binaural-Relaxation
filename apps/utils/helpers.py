@@ -22,6 +22,15 @@ def avatar_upload_path(instance, filename):
     return f"user/avatar/{final_filename}"
 
 
+def ckeditor_upload_path(instance, filename):
+    """Renames a file/image on upload"""
+    new_filename = str(random.randint(1, 33524642542))
+    name, ext = get_filename_ext(filename)
+    final_filename = f"{new_filename[:5]}-{name[:5]}{ext}"
+
+    return f"ckeditor_uploads/new/{final_filename}"
+
+
 def audio_upload_path(instance, filename):
     """Renames a file/image on upload"""
     new_filename = str(random.randint(1, 33524642542))
